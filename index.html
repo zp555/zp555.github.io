@@ -99,33 +99,15 @@
 <p>D:\HelloWorld&gt;javac HelloWorld.java    #用 javac 编译成字节码文件（HelloWorld.class）<br>D:\HelloWorld&gt;java HelloWorld          #用 java 解释执行成特定平台的机器码<br>Hello,World!<br>02. C<br>环境: MinGW 或各种 C/C++ 编译器</p>
 <p>D:\HelloWorld&gt;gcc -v<br>Reading specs from C:/Perl/site/lib/auto/MinGW/bin/../lib/gcc/mingw32/3.4.5/specs<br>Configured with: ../gcc-3.4.5-20060117-3/configure –with-gcc –with-gnu-ld –with-gnu-as –host=min<br>gw32 –target=mingw32 –prefix=/mingw –enable-threads –disable-nls –enable-languages=c,c++,f77,ad<br>a,objc,java –disable-win32-registry –disable-shared –enable-sjlj-exceptions –enable-libgcj –dis<br>able-java-awt –without-x –enable-java-gc=boehm –disable-libgcj-debug –enable-interpreter –enabl<br>e-hash-synchronization –enable-libstdcxx-debug<br>Thread model: win32<br>gcc version 3.4.5 (mingw-vista special r3)<br>代码: </p>
 <p>#include &lt;stdio.h&gt;<br>int main()                #main 入口函数<br>{<br>  printf(“Hello,World!”); #printf 函数打印<br>  return 1;               #函数返回值<br>}<br>说明：</p>
-<p>D:\HelloWorld&gt;gcc HelloWorld.c -o output   #文件名 HelloWorld.c，-o 输出文件名 output<br>HelloWorld.c:6:2: warning: no newline at end of file  </p>
-<p>D:\HelloWorld&gt;output                       #直接运行输出文件<br>Hello,World!<br>#如果未安装 GCC，那么必须按照 <a target="_blank" rel="noopener" href="http://gcc.gnu.org/install/">http://gcc.gnu.org/install/</a> 上的详细说明安装 GCC。<br>#为了在 Windows 上安装 GCC，需要安装 MinGW。<br>#为了安装 MinGW，请访问 MinGW 的主页 <a target="_blank" rel="noopener" href="http://www.mingw.org,进入/">www.mingw.org，进入</a> MinGW 下载页面，下载最新版本的 MinGW 安装程序，命名格式为 MinGW-<version>.exe。<br>#当安装 MinWG 时，至少要安装 gcc-core、gcc-g++、binutils 和 MinGW runtime，但是一般情况下都会安装更多其他的项。<br>#添加您安装的 MinGW 的 bin 子目录到您的 PATH 环境变量中，这样您就可以在命令行中通过简单的名称来指定这些工具。<br>#当完成安装时，就可以从 Windows 命令行上运行 gcc、g++、ar、ranlib、dlltool 和其他一些 GNU 工具。<br>03. C++<br>环境: MinGW 或各种 C++ 编译器</p>
-<p>头文件后缀名：.h、.hpp、.hxx<br>源文件后缀名：.cpp、.c++、.cxx、.cc、.C</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line">D:\HelloWorld&gt;gcc HelloWorld.c -o output   #文件名 HelloWorld.c，-o 输出文件名 output  </span><br><span class="line">HelloWorld.c:<span class="number">6</span>:<span class="number">2</span>: warning: no newline at end <span class="keyword">of</span> file  </span><br><span class="line"></span><br><span class="line"><span class="attr">D</span>:\HelloWorld&gt;output                       #直接运行输出文件               </span><br><span class="line">Hello,World!</span><br><span class="line">#如果未安装 GCC，那么必须按照 http:<span class="comment">//gcc.gnu.org/install/ 上的详细说明安装 GCC。  </span></span><br><span class="line">#为了在 Windows 上安装 GCC，需要安装 MinGW。</span><br><span class="line">#为了安装 MinGW，请访问 MinGW 的主页 www.mingw.org，进入 MinGW 下载页面，下载最新版本的 MinGW 安装程序，命名格式为 MinGW-&lt;version&gt;.exe。  </span><br><span class="line">#当安装 MinWG 时，至少要安装 gcc-core、gcc-g++、binutils 和 MinGW runtime，但是一般情况下都会安装更多其他的项。    </span><br><span class="line">#添加您安装的 MinGW 的 bin 子目录到您的 PATH 环境变量中，这样您就可以在命令行中通过简单的名称来指定这些工具。    </span><br><span class="line">#当完成安装时，就可以从 Windows 命令行上运行 gcc、g++、ar、ranlib、dlltool 和其他一些 GNU 工具。</span><br><span class="line"><span class="number">03</span>. C++</span><br><span class="line">环境: MinGW 或各种 C++ 编译器</span><br><span class="line"></span><br><span class="line">头文件后缀名：.h、.hpp、.hxx</span><br><span class="line">源文件后缀名：.cpp、.c++、.cxx、.cc、.C</span><br></pre></td></tr></table></figure>
 <p>代码:</p>
 <p>#include <iostream>               //std::cout 要用到的头文件<br>#include &lt;stdio.h&gt;                //标准输入输出头文件  </p>
 <p>int main()<br>{<br>  printf(“Hello,World!–Way 1\n”);    //printf 语句打印<br>  puts(“Hello,World!–Way 2”);        //puts 语句<br>  puts(“Hello,” “ “ “World!–Way 3”); //字符串拼接<br>  std::cout &lt;&lt; “Hello,World!–Way 4” &lt;&lt; std::endl; //C++ 教科书上写法<br>  return 1;                                        //作为注释<br>}<br>说明：</p>
 <p>D:\HelloWorld&gt;g++ HelloWorld.c++ -o output   //源文件后缀也可为 .cpp、.C  </p>
-<p>D:\HelloWorld&gt;output<br>Hello,World!–Way 1<br>Hello,World!–Way 2<br>Hello,World!–Way 3<br>Hello,World!–Way 4<br>04. Python<br>环境: Python 2.x 或 Python 3.x</p>
-<p>D:\HelloWorld&gt;python<br>Python 2.7.4 (default, Apr  6 2013, 19:55:15) [MSC v.1500 64 bit (AMD64)] on win32<br>Type “help”, “copyright”, “credits” or “license” for more information.<br>代码：</p>
-<blockquote>
-<blockquote>
-<blockquote>
-<blockquote>
-<p>print “Hello,World!”   #Python 2.x<br>Hello,World!<br>print(“Hello,World!”)  #Python 3.x<br>Hello,World!<br>说明:</p>
-</blockquote>
-</blockquote>
-</blockquote>
-</blockquote>
-<ol>
-<li><p>在 Python 3.x 中，print 语句是函数，所以为 print()。</p>
-</li>
-<li><p>也可以写在 .py 文件中，同样执行。</p>
-</li>
-<li><p>python2.6 及以上版本和 python3.x 基本相同，也同样可以使用 print() 来打印。</p>
-</li>
-<li><p>C#<br>环境：Windows</p>
-</li>
+<p>D:\HelloWorld&gt;output<br>Hello,World!–Way 1<br>Hello,World!–Way 2<br>Hello,World!–Way 3<br>Hello,World!–Way 4</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"><span class="number">04</span>. Python</span><br><span class="line">环境: Python <span class="number">2.</span>x 或 Python <span class="number">3.</span>x</span><br><span class="line"></span><br><span class="line"><span class="attr">D</span>:\HelloWorld&gt;python  </span><br><span class="line">Python <span class="number">2.7</span><span class="number">.4</span> (<span class="keyword">default</span>, Apr  <span class="number">6</span> <span class="number">2013</span>, <span class="number">19</span>:<span class="number">55</span>:<span class="number">15</span>) [MSC v<span class="number">.1500</span> <span class="number">64</span> bit (AMD64)] on win32  </span><br><span class="line">Type <span class="string">&quot;help&quot;</span>, <span class="string">&quot;copyright&quot;</span>, <span class="string">&quot;credits&quot;</span> or <span class="string">&quot;license&quot;</span> <span class="keyword">for</span> more information.  </span><br><span class="line">代码：</span><br><span class="line"></span><br><span class="line">&gt;&gt;&gt;&gt; print <span class="string">&quot;Hello,World!&quot;</span>   #Python <span class="number">2.</span>x  </span><br><span class="line">&gt;&gt;&gt;&gt; Hello,World!  </span><br><span class="line">&gt;&gt;&gt;&gt; print(<span class="string">&quot;Hello,World!&quot;</span>)  #Python <span class="number">3.</span>x    </span><br><span class="line">&gt;&gt;&gt;&gt; Hello,World!  </span><br><span class="line">&gt;&gt;&gt;&gt; 说明:</span><br><span class="line"></span><br><span class="line"><span class="number">1.</span> 在 Python <span class="number">3.</span>x 中，print 语句是函数，所以为 print()。</span><br><span class="line"><span class="number">2.</span> 也可以写在 .py 文件中，同样执行。</span><br><span class="line"><span class="number">3.</span> python2<span class="number">.6</span> 及以上版本和 python3.x 基本相同，也同样可以使用 print() 来打印。</span><br></pre></td></tr></table></figure>
+<ol start="5">
+<li>C#<br>环境：Windows</li>
 </ol>
 <p>d:\HelloWorld&gt;csc -v<br>Microsoft (R) Visual C# 2005 Compiler version 8.00.50727.4927<br>for Microsoft (R) Windows (R) 2005 Framework version 2.0.50727<br>Copyright (C) Microsoft Corporation 2001-2005. All rights reserved.<br>代码：</p>
 <p>//FileName: HelloWorld.cs<br>using System;<br>class TestApp<br>{<br>  public static void Main()<br>  {<br>    Console.WriteLine(“Hello,World!”);<br>    Console.ReadKey();<br>  }<br>}<br>//执行如下:<br>d:\HelloWorld&gt;csc HelloWorld.cs<br>Microsoft (R) Visual C# 2005 Compiler version 8.00.50727.4927<br>for Microsoft (R) Windows (R) 2005 Framework version 2.0.50727<br>Copyright (C) Microsoft Corporation 2001-2005. All rights reserved.  </p>
@@ -270,6 +252,7 @@ echo phpinfo();                 //phpinfo()系统函数,输出环境信息
 <p>write(“Hello,World!”).<br>#注意，句末有点号 </p>
 <p>说明：</p>
 <p>Prolog（Programming in Logic）是一种逻辑编程语言。它建立在逻辑学的理论基础之上，最初被运用于自然语言等研究领域。现已广泛地应用在人工智能的研究中，可以用来建造专家系统、自然语言理解、智能知识库等。</p>
+<p><code>js https://bkimg.cdn.bcebos.com/pic/3b87e950352ac65cd20ecfcbf9f2b21193138a7b?x-bce-process=image/watermark,image_d2F0ZXIvYmFpa2UxNTA=,g_7,xp_5,yp_5/format,f_auto </code>代码</p>
 
       
     </div>
